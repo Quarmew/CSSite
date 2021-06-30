@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head itemscope itemtype="https://schema.org/Article">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Главная страница</title>
+    <meta name="description" content="Что такое CSS и с чем его едят, для чего используют и как выделить ваш сайт среди серых страничек текстовых страниц.">
+    <meta itemprop="headline name" content="Что такое CSS?">
+    <meta itemprop="description" content="Что такое CSS и с чем его едят, для чего используют и как выделить ваш сайт среди серых страничек текстовых страниц.">
+    <meta name="keywords" content="Css, css, Cascading Style Sheet, cascading style sheet, Каскадная таблица стилей, Каскадная Таблица, ЦСС, css3, CSS3, CSS">
+    <meta name="author" content="Egor Ufimtsev">
+    <meta itemprop="datePublished" content="2021-06-12">
+    <meta itemprop="dateModified" content="2021-06-12">         
+
+    <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/colors.css"> 
+    <link rel="stylesheet" href="css/header.css">    
+    <link rel="stylesheet" href="css/pre-tag.css">
+    <link rel="stylesheet" href="css/index-examples.css">    
+</head>
+<body class="blue-back"> 
+    <header>
+        <nav class="navbar container">
+            <a class="navbar-brand" href="index.html">CSSSite</a>
+            <div class="d-flex">
+              <a class="nav-item nav-link" href="animation.html">Анимации</a>
+              <a class="nav-item nav-link" href="useful-resources.html">Полезные ресурсы</a>
+              <a class="nav-item nav-link" href="inheritance.html">Наследование</a>
+              <a class="nav-item nav-link" href="cascad.html">Каскадность</a>
+            </div>               
+          </nav>
+    </header>
+    <main  class="container" >
+        <section>
+            <header class="bg-white px-3 py-1 rounded mb-4">
+                <h1>Что такое CSS?</h1>                
+                <p>CSS (Cascading Style Sheets) — это код, который вы используете для стилизации вашей веб-страницы. Основы CSS помогут вам понять, что вам нужно для начала работы. Мы ответим на такие вопросы как: Как сделать мой текст черным или красным? Как сделать так, чтобы контент появлялся в определённом месте на экране? Как украсить мою веб-страницу с помощью фоновых изображений и цветов?</p>
+            </header>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+              <h2 class="mb-0 text-center">Анатомия</h2>
+              <div class="text-center my-4">
+                <img class="img-fluid rounded" src="images/css-declaration-small.png" alt="Структура css-правил" title="Правила к селектору P   ">
+              </div>            
+                <p>
+                    Вся структура называется набором правил (но зачастую для краткости "правило"). Отметим также имена отдельных частей:<br/>
+                    <span>Селектор (Selector)</span><br/>
+                    Имя HTML элемента в начале набора правил. Он выбирает элемент(ы) для применения стиля (в данном случае, элементы p ). Для стилизации другого элемента, просто измените селектор.<br/>
+                    <span>Объявление (Declaration)</span><br/>
+                    Единственное правило, например color: red; указывает, какие из свойств элемента вы хотите стилизовать.<br/>
+                    <span>Свойства (Properties)</span><br/>
+                    Способы, которыми вы можете стилизовать определённый HTML элемент (в данном случае, color является свойством для элементов &#60;p&#62;). В CSS вы выбираете, какие свойства вы хотите затронуть в вашем правиле.<br/>
+                    <span>Значение свойства (Property value)</span><br/>
+                    Справа от свойства, после двоеточия, у нас есть значение свойства, которое выбирает одно из множества возможных признаков для данного свойства (существует множество значений color, помимо red).<br/>
+                </p>
+            </article>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+              <h2 class="mb-0 text-center">На что он способен?</h2>
+              <p>Приведу несколько примеров, минимально демонстрирующих возможности CSS:</p>
+              <div class="row">
+                <div class="box col-6">
+                    <!-- Круглая голова -->
+                    <div class="head">
+                        <!-- Круглая копия головы -->
+                        <div class="head-copy"></div>
+
+                        <!-- Левое ухо ~ светло-серое -->
+                        <div class="ear-left">
+
+                            <!-- Внутреннее ухо ~ тёмно-серое -->
+                            <div class="inner-ear"></div>
+                        </div>
+
+                        <!-- Правое ухо ~ светло-серое -->
+                        <div class="ear-right">
+                            <!-- Внутреннее ухо ~ Тёмно-серое -->
+                            <div class="inner-ear"></div>
+                        </div>
+
+                        <!-- Левый глаз ~ белый -->
+                        <div class="eye-left">
+                            <!-- Зрачок ~ чёрный -->
+                            <div class="pupil">
+                            </div>
+                        </div>
+
+                        <!-- Правый глаз ~ белый -->
+                        <div class="eye-right">
+                            <!-- Зрачок ~ чёрный -->
+                            <div class="pupil">
+                            </div>
+                        </div>
+
+                        <!-- Нос ~ коричневый -->
+                        <div class="nose">
+                        </div>
+
+                        <!-- Волосы ~ светло-серые -->
+                        <div class="hair-left"></div>
+                        <div class="hair-right"></div>
+
+                        <!-- Конец головы -->
+                    </div>
+                    <!-- Конец невидимого поля -->
+                </div>
+                <div class="col">
+                    <pre class="p-2 rounded">
+.box{
+position: relative;
+margin: auto;
+display: block;
+margin-top: 8%;
+width: 600px;
+height: 420px;
+background: none;
+}
+
+.head{
+position: absolute;
+top:16.5%;
+left: 25%;
+width: 50%;
+height: 67%;
+background: #A6BECF;
+border-radius: 50%;
+}
+
+.head-copy{
+width: 100%;
+height: 100%;
+position: absolute;
+background: #A6BECF;
+border-radius: 50%;
+z-index: 2;
+}
+
+.ear-left{
+position: absolute;
+width: 60%;
+height: 65%;
+left: -20%;
+top: 5%;
+background: #A6BECF;
+border-radius: 50%;
+z-index: 1;
+}
+
+.ear-right{
+position: absolute;
+width: 60%;
+height: 65%;
+right: -20%;
+top: 5%;
+background: #A6BECF;
+border-radius: 50%;
+z-index: 1;
+}
+
+.inner-ear{
+position: absolute;
+border-radius: 50%;
+width: 80%;
+height: 80%;
+top: 10%;
+left: 10%;
+background: #819CAF;
+}
+
+.eye-left{
+position: absolute;
+background: white;
+width: 30%;
+height: 33%;
+top: 25%;
+left: 21%;
+border-radius: 50%;
+z-index: 3;
+}
+
+.eye-right{
+position: absolute;
+background: white;
+width: 30%;
+height: 33%;
+top: 25%;
+right: 21%;
+border-radius: 50%;
+z-index: 3;
+}
+
+.pupil{
+position: absolute;
+width: 28%;
+height: 30%;
+top: 35%;
+left: 36%;
+border-radius: 50%;
+background: #27354A;
+}
+
+.nose{
+position: absolute;
+background: #BE845F;
+width: 25%;
+height: 42.5%;
+left: 37%;
+top: 45%;
+border-radius: 50px;
+z-index: 4;
+}
+
+.hair-left{
+position: absolute;
+top: -8%;
+left: 30%;
+width: 20%;
+height: 20%;
+background:  #A6BECF;
+-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.hair-right{
+position: absolute;
+top: -4%;
+left: 48%;
+width: 20%;
+height: 20%;
+background:  #A6BECF;
+-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.examples-box{
+position: relative;
+}
+        </pre>
+                </div>
+                </div>
+                <div class="row" id="block-container">
+                    <div class="col-6 container d-flex align-items-center" id="flexDirCon">
+                        <div class="block1 blocks text-center">
+                            1
+                        </div>
+                        <div class="block2 blocks text-center">
+                            2
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="mt-1 filter-button rounded btn" onclick="changeFlexDir(this)">Столбец</button>
+                        <pre class="p-2 mt-2 rounded">
+#flexDirCon{
+//dir содержащий оба блока
+display: flex;
+align-items: center;
+}
+.block1{
+background: var(--green);
+}
+.block2{
+background: var(--blue);
+}
+.blocks{
+width: 50%;
+line-height: 10;
+}</pre>
+                    </div>
+                </div>
+            </article>
+            <article class="bg-white px-3 pt-1 rounded">
+                <h2 class="mb-0 text-center">Как его подключить?</h2>
+                <div class="container">
+                    <p class="pt-5">Для подключения CSS-файлов к вашем HTML-файлам нужно указать тег &#60;link&#62; в &#60;head&#62;. В атрибуте rel тега link необходимо указать "stylesheet", а в атребуте href ссылку на файл CSS. Пример:</p>
+                    <img class="img-fluid mb-3" src="images/css-head-including.PNG" alt="Подключение CSS в шапке" title="Подключение CSS в шапке">
+                    <p>Как можно заметить на изображении подключены сразу 3 файла css.</p>
+                    <p> Так же есть ещё способ использования CSS прямо в файле HTML благодаря тегу &#60;style&#62;. Поскольку использование CSS стало каноном, то ныне не требуется указывать атрибут type, но раньше внутри тега style его прописывали со значением "text/css", ведь в этом месте должнен был начиться синтаксис CSS.</p>
+                    <p>Желательно использовать именно приведенный выше метод с подключением отдельного файла. Это упорядочивает и разграничевает пространство, но если есть необходимость, тогда можно написать следующим образом:</p>
+                    <img class="img-fluid mb-3" src="images/css-html-body-including.PNG" alt="Подключение CSS через тег Style" title="Подключение CSS через тег Style">
+                    <p>Недостаток такого метода в 2-х вещах: Первое, если css-правил достаточно много - это делает код нечитабельным и трудным для устранения выявленных ошибок; Второе, эти правила применяются только к той html-странице на которой расположены.</p>
+                    <p class="pb-3">Один из механизмов CSS - это перезаписывание свойств. То есть если указать background: red, а затем где-то ниже для этого же элемента перезаписать это свойство со значением green, тогда фон будет зеленым. Это достаточно легко понять. Стоит только учитывать что ко всему прочему если разместить css-файлы как на предыдущем изображении, тогда свойства из первого файла могут не работать из за перезаписи их в третьем. Это создаёт проблемы и для комбинированого использования файла и тега style. Можно просто не заметить ошибку.</p>
+                </div>
+            </article>
+            <section id="formSection" class="text-center my-3 bg-white py-3 rounded">
+                <h2>Обновления сайта</h2>
+                <button class="btn" id="formCreator" onclick="formToggle()">Подписаться на новости</button>
+            </section>            
+            <footer>
+                <p class="text-center">Разработано студентом ЧРТ</p>
+            </footer>
+        </section>
+    </main>
+    <script src="javascript/indexApp.js"></script> 
+</body>
+</html>

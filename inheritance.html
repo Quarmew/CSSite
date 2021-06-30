@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head itemscope itemtype="https://schema.org/Article">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Наследование</title>
+    <meta name="description" content="Для чего нужно наследование в CSS и как его использования.">
+    <meta itemprop="headline name" content="Наследование в CSS">
+    <meta itemprop="description" content="Для чего нужно наследование в CSS и как его использования.">
+    <meta name="keywords" content="CSS inheritance, inheritance css, inheritance cascading table">
+    <meta name="author" content="Egor Ufimtsev">
+    <meta itemprop="datePublished" content="2021-06-12">
+    <meta itemprop="dateModified" content="2021-06-12">         
+
+    <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/colors.css"> 
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/pre-tag.css">
+    <link rel="stylesheet" href="css/inheritance-examples.css">
+</head>
+<body class="blue-back">
+    <header>
+        <nav class="navbar container">
+            <a class="navbar-brand" href="index.html">CSSSite</a>
+            <div class="d-flex">
+              <a class="nav-item nav-link" href="animation.html">Анимации</a>
+              <a class="nav-item nav-link" href="useful-resources.html">Полезные ресурсы</a>
+              <a class="nav-item nav-link" href="inheritance.html">Наследование</a>
+              <a class="nav-item nav-link" href="cascad.html">Каскадность</a>
+            </div>               
+          </nav>
+    </header>
+    <main class="container">
+        <section>
+            <header class="bg-white px-3 py-1 rounded mb-4">
+                <h1>Наследование в CSS</h1>
+                <p>Наследование — это прием, с помощью которого CSS-свойства, относящиеся к одному элементу веб-страницы, распространяются и на вложенные элементы. На пример, абзац p всегда находится внутри тела страницы body. Так, атрибуты, применяемые к элементу body, наследуются p. Допустим, вы создали селектор тега для элемента body, который устанавливает атрибут color (например, темно-красный цвет). Производные элементы, являющиеся потомками body, то есть расположенные внутри него, наследуют атрибут. Это означает, что любой текст заключенный в теги элементов h1, h2, p и т.д., будет отображен тем же темно-красным цветом.</p>
+            </header>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+                <h2>Упрощение CSS через наследование</h2>
+                <p>Наследование можно использовать для упращения написания и уменьшение общего количества css-правил.</p>
+                <p>Пример: поместим несколько тегов p в блок div и применим форматирование текста к div</p>
+                <div class="example-block-formed-text">
+                    <p>Первый текст</p>
+                    <p>Второй текст</p>
+                    <p>Третий текст</p>
+                </div>
+                <p>Код CSS</p>
+                <pre>
+.example-block-formed-text{
+    border: 2px solid var(--dark-blue);    
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}</pre>
+            </article>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+                <h2>Ограничениея наследования</h2>
+                <p>Несмотря на плюсы, часть свойств не наследуемы. Увы. К примеру border не наследуется.</p>
+                <p>К ненаследуемым можно отнести также фоновый цвет и границы. В общем всё то что влияет на расположение элемента на странице.</p>
+                <p>Стоит учитывать что если у элемента унаследовалось какое-то свойство, но при этом у него также задано это самое свойство, то в зависимости от ситуации оно будет либо унаследовано, либо нет. И если при проверке вашей странице стили в прямом (или косвенном) понимании "поехали", то стоит проверить - не унаследовалось что-либо где-либо.</p>
+            </article>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+                <h2>Значение свойства inherit</h2>
+                <p>Если вам хочеться унаследовать элементу какой-то стиль от родителя, но он это не сделал автоматически, то стоит прописать вручную у интересующего свойства значение inherit.</p>
+            </article>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+                <h2>Вывод</h2>
+                <p>Механизм наследование зачастую полезен, но не всегда интуитивен. При практике вы начнёте понимать что наследуется, а что — нет. Наследование включает намного больше в себя того, что здесь не описано.</p>
+                <p>Полезные ссылки по этой теме</p>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/inheritance">developer.mazilla.org</a></li>
+                    <li><a href="http://htmlbook.ru/samcss/nasledovanie">htmlbook.ru</a></li>
+                    <li><a href="https://htmlacademy.ru/courses/307/run/4">htmlacademy.ru</a></li>
+                    <li><a href="https://metanit.com/web/html5/5.9.php">metanit.com</a></li>
+                </ul>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

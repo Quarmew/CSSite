@@ -1,0 +1,10 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+Allow:
+Clean-param: article /list-style-properties.html
+
+User-agent: Yandex
+Disallow: /noyandex/
+Allow:
+Clean-param: article /list-style-properties.html
+Sitemap: https://uefgoo.orgfine.com/sitemap.xml

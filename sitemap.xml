@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+        <url>
+            <loc>https://uefgoo.orgfine.com/index.html</loc>
+            <lastmod> 2021-06-23 </lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>1</priority>
+        </url>
+        <url>
+            <loc>https://uefgoo.orgfine.com/animation.html</loc>
+            <lastmod> 2021-06-26</lastmod>
+            <changefreq>never</changefreq>
+            <priority>0.7</priority>
+        </url> 
+        <url>
+            <loc>https://uefgoo.orgfine.com/useful-resources.html</loc>
+            <lastmod> 2021-06-26 </lastmod>
+            <changefreq>never</changefreq>
+            <priority>0.3</priority>
+        </url>
+        <url>
+            <loc>https://uefgoo.orgfine.com/inheritance.html</loc>
+            <lastmod> 2021-06-23 </lastmod>
+            <changefreq>never</changefreq>
+            <priority>1</priority>
+        </url>
+        <url>
+            <loc>https://uefgoo.orgfine.com/cascad.html</loc>
+            <lastmod> 2021-06-23</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.9</priority>
+        </url>
+</urlset>

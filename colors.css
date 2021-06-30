@@ -1,0 +1,23 @@
+:root{
+    --dark-blue: #132631;
+    --blue: #1a909f;
+    --green: #2D9A82;
+}
+.dark-blue-back{
+    background: var(--dark-blue);
+}
+.blue-back{
+    background: var(--blue);
+}
+.green-back{
+    background: var(--green);
+}
+.dark-blue-font-color{
+    color: var(--dark-blue);
+}
+.bluee-font-color{
+    color: var(--blue);
+}
+.greene-font-color{
+    color : var(--green);
+}

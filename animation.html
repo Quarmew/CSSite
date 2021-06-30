@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head itemscope itemtype="https://schema.org/Article">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS анимации</title>
+    <meta name="description" content="Как создать анимацию на CSS? Какие эффекты можно использовать и многое другое.">
+    <meta itemprop="headline name" content="CSS анимации">
+    <meta itemprop="description" content="Как создать анимацию на CSS? Какие эффекты можно использовать и многое другое.">
+    <meta name="keywords" content="Css animation, CSS анимации, анимации для сайта">
+    <meta name="author" content="Egor Ufimtsev">
+    <meta itemprop="datePublished" content="2021-06-12">
+    <meta itemprop="dateModified" content="2021-06-12">         
+
+    <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/colors.css"> 
+    <link rel="stylesheet" href="css/header.css">    
+    <link rel="stylesheet" href="css/pre-tag.css">
+    <link rel="stylesheet" href="css/animation-examples.css">    
+    <script src="https://js.cx/libs/animate.js"></script>
+</head>
+<body class="blue-back">
+    <header>
+        <nav class="navbar container">
+            <a class="navbar-brand" href="index.html">CSSSite</a>
+            <div class="d-flex">
+              <a class="nav-item nav-link" href="animation.html">Анимации</a>
+              <a class="nav-item nav-link" href="useful-resources.html">Полезные ресурсы</a>
+             <a class="nav-item nav-link" href="inheritance.html">Наследование</a>
+             <a class="nav-item nav-link" href="cascad.html">Каскадность</a>
+            </div>               
+          </nav>
+    </header>
+    <main class="container">
+        <section>
+            <header class="bg-white px-3 py-1 rounded mb-4">
+                <h1>Что такое анимации в CSS?</h1>
+                <p>CSS3-анимация придаёт сайтам динамичность. В отличие от CSS3-переходов, создание анимации базируется на ключевых кадрах, которые позволяют автоматически воспроизводить и повторять эффекты на протяжении заданного времени, а также останавливать анимацию внутри цикла.</p>
+            </header>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+                <h2>Transition</h2>
+                <p>Transition позволяет определять переходное состояние между двумя состояниями элемента.</p>
+                <p>Есть состояние элемента под названием hover. Оно реализуется если навести курсором мыши на элемент. Для улучшение UX для кнопок зачастую добавляют анимацию наведения и нажатия. Для этого достаточно изменение одного двух свойств кнопки.</p>
+                <p>В hover мы прописывает измененный стиль. При наведениии всё работает резко без плавности. Для этого в обычный стиль элемента мы прописываем свойство transition:</p>
+                <h5>Без transition</h5>
+                <pre class="example">
+.block{
+    height: 50px;
+    width: 100px;
+    background: #1a909f;
+}
+.block:hover{
+    width: 200px;
+}</pre>
+                <div class="block-without-transition"></div>
+                <p>Классно, работает, но не дружелюбно. Добавим transition. У него указываем сначало свойство, которое мы хотим изменить, затем длительность.</p>
+                <pre class="example">
+.block{
+    width: 100px;
+    height: 50px;
+    background: #2D9A82;
+    transition: width 2s;
+}
+.block:hover{
+    width: 200px;
+}</pre>
+<div class="block-with-transition"></div>
+                <p>Получился медленно тянущийся элемент, но уже лучше. Теперь приведу пример разной длительности анимации.</p>
+                <span class="trigger border">Наведи на меня</span>
+                <div class="block-duration dur1 text-center"><p>2s</p></div>
+                <div class="block-duration dur2 text-center"><p>1s</p></div>
+                <div class="block-duration dur3 text-center"><p>0.5s</p></div>
+                <p>Так же у этого свойства есть возможность задать задержку и временную функцию.</p>
+                <p>При указании задержки мы как не странно отсрочиваем начала изменений.</p>
+                <p>Временная фунция задаётся следующими значениями:</p>
+                <ul>
+                    <li>
+                        <h5>linear</h5>
+                        <p>Равномерное изменение без колебаний</p>
+                    </li>
+                    <li>
+                        <h5>ease</h5>
+                        <p>Переход начинается медленно, быстрый разгон, замедление.</p>
+                    </li>
+                    <li>
+                        <h5>ease-in</h5>
+                        <p>Медленное начало, плавное ускорение.</p>
+                    </li>
+                    <li>
+                        <h5>ease-out</h5>
+                        <p>Быстрое начало и плавное замедление в конце</p>
+                    </li>
+                    <li>
+                        <h5>ease-in-out</h5>
+                        <p>Медленное начало и медленный конец.</p>
+                    </li>
+                    <li>
+                        <h5>steps()</h5>
+                        <p>В скобках указываются количество ходов и также вид уже самих ходов.</p>
+                    </li>
+                    <li>
+                        <h5>inherit, initial, unset</h5>
+                        <p>Наследует от родителя, по умолчанию, убирает значение.</p>
+                    </li>
+                    <li>
+                        <h5>cubic-bezier()</h5>
+                        <p>Это целая функция для расчёта кривой. Ей можно задать все остальные значения этого временной функции.</p>
+                    </li>
+                </ul>
+                <p>Ознакомиться с большей инофрмацией про transition можно по следующим ссылкам:</p>
+                <a href="https://developer.mozilla.org/ru/docs/Web/CSS/transition">developer.mazilla.com</a><br>
+                <a href="https://html5book.ru/css3-transition/">html5book.ru</a>
+            </article>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+                <h2>Keyframes</h2>
+                <pre class="example">
+@keyframes имя анимации {
+    from {...}
+    to {...}
+}</pre>
+                <p>Создание анимации начинается с установки ключевых кадров правила @keyframes. Кадры определяют, какие свойства на каком шаге будут анимированы. Каждый кадр может включать один или более блоков объявления из одного или более пар свойств и значений.</p>
+                <p>Из структуры выше можно понять что нужно указать название и записать значения в from и to, но сами from и to можно заменить на проценты. То есть расписанить эту анимацию на 3, 4 ,5 и сколько угодно действий исползуя проценты от 0 до 100 (где 0 - начальная позиция или первый кадр, а 100 - конечная позиция или конечный кадр).</p>
+                <pre class="example">
+@keyframes breath{
+    0%{
+        width: 115px;
+        animation-timing-function: ease-out;
+    }
+    25%{
+        width: 130px;
+        animation-timing-function: linear;
+    }
+    50%{
+        width: 125px;
+        animation-timing-function: linear;
+    }
+    75%{
+        width: 110px;
+        animation-timing-function: ease-in-out;
+    }
+    100%{
+        width: 100px;
+        animation-timing-function: ease-in-out;
+    }
+}</pre>
+                <p>Мы указали процентные значения. изменяется width и у каждого момента своя временная функция.</p>
+                <p>Теперь, чтобы воспользоваться этой анимацией необходимо у элемента, на которого будет распространяться эта анимация, установить свойство animation</p>
+                <h3>Animation</h3>
+                <p>Подвойства:</p>
+                <ul>
+                    <li>
+                        <h5>animation-name</h5>
+                        <p>Название используемой анимации(у нас она названа breath).</p>
+                    </li>
+                    <li>
+                        <h5>animation-duration</h5>
+                        <p>Длительность одного цикла анимации</p>
+                    </li>
+                    <li>
+                        <h5>animation-timing-function</h5>
+                        <p>Ускорение анимации. Мы указали внутри анимации.</p>
+                    </li>
+                    <li>
+                        <h5>animation-delay</h5>
+                        <p>Задержка перез началом анимации</p>
+                    </li>
+                    <li>
+                        <h5>animation-iteration-count</h5>
+                        <p>Количество повторений. Можно ввести infinity - бесконечное повторение анимации</p>
+                    </li>
+                    <li>
+                        <h5>animation-direction</h5>
+                        <p>Даёт возможность при каждом повторе анимации идти по альтернативному пути, либо сбросить все значения и повторить анимацию.</p>
+                    </li>
+                    <li>
+                        <h5>animation-fill-mode</h5>
+                        <p>Настраивает значения, используемые анимацией, до и после исполнения.</p>
+                    </li>
+                    <li>
+                        <h5>animation-play-state</h5>
+                        <p>Позволяет приостановить и возобновить анимацию.</p>
+                    </li>
+                </ul>
+                <pre class="example">
+.breath-block{
+    animation: breath 3s;
+                </pre>
+                <div class="breath-block"></div>
+                <p>Задал name, duration и animation-iteration-count.</p>
+                <p>И это при учёте того что изменяется только одно свойство элемента - width.</p>
+                <p>Больше информации о этом:</p>
+                <a href="https://webref.ru/course/css-advanced/animation">developer.mazilla.com</a><br>
+                <a href="https://html5book.ru/css3-animation/">html5book.ru</a><br>
+                <a href="https://stfalcon.com/ru/blog/post/animation-css">stfalcon.com</a>
+            </article>
+            <article class="bg-white px-3 py-1 rounded mb-4">
+                <h2>CSS-анимации VS JS-анимации</h2>
+                <p>Самую простую анимацию можно создавать как с помощью CSS, так и с помощью JavaScript, однако объем затрат труда и времени будет разным. У каждого варианта есть свои достоинства и недостатки, но есть хорошие правила, которым нужно следовать:</p>
+                <ul>
+                    <li>
+                        <strong>Используйте CSS при работе с самодостаточными состояниями элементов пользовательского интерфейса небольшого размера.</strong>
+                        <p>Переходы и анимация, выполненные средствами CSS, идеально подходят для вывода меню навигации на экран сбоку или отображения подсказки. JavaScript можно использовать для контроля состояния, однако сама анимация будет выполнена средствами CSS.</p>
+                    </li>
+                    <li>
+                        <strong>Используйте JavaScript, когда требуется высокая степень контроля над анимацией.</strong>
+                        <p>Когда нужно реализовать динамическое отслеживание положения касания или анимацию, которую необходимо будет остановить, приостановить, замедлить или запустить в обратном направлении, следует пользоваться JavaScript.</p>
+                    </li>
+                </ul>
+                <p>Пример анимации на JS: Введите текст и нажмите на кнопку для запуска анимации</p>
+                <button class="btn" id="textAnimationButton" onclick="animateText(textArea)">Запустить анимацию</button>
+                <br>
+                <textarea id="textArea"  cols="30" rows="5" class="my-3">Пример текста написаного для демонстрации работы анимации</textarea>
+                <p>Информация взята с <a href="https://learn.javascript.ru/js-animation">learn.javascript.ru</a></p>
+                <p>Код JS не буду показывать, поскольку он не относиться к нашей теме, а только лишь указывает на различия подходов.</p>
+                <p>Пример использования готовой библиотеки move.js:</p>
+                <div id="moveBlock" onclick="moveScript()"></div>
+                <p>Такую анимацию достаточно просто реализовать на CSS, но это уже дело вкуса. Но как и писал выше, простые анимации лучше делать на CSS, сложные или ветвистые — JS</p>
+            </article>
+            <footer>
+                <p class="text-center">Разработано студентом ЧРТ</p>
+            </footer>
+        </section>
+    </main>
+    <script src="javascript/move.min.js"></script>
+    <script src="javascript/animationPageScripts.js"></script>
+</body>
+</html>

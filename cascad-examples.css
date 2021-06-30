@@ -1,0 +1,6 @@
+.pExample{
+    font-size: 24px;
+}
+.pExample strong{
+    color: var(--green);
+}

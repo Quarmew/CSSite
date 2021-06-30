@@ -1,0 +1,57 @@
+.block-without-transition, .block-with-transition, .block-duration{
+    width: 100px;
+    height: 50px;
+    background: var(--blue);
+}
+.block-without-transition:hover, .block-with-transition:hover{
+    width: 200px;
+}
+.block-with-transition{
+    transition: width 2s;
+}
+.block-duration{
+    margin: 1px 0px;
+}
+.dur1{
+    transition: width 2s;
+}
+.dur2{
+    transition: width 1s;
+}
+.dur3{
+    transition: width 0.5s;
+}
+.trigger:hover ~ .block-duration{
+    width: 200px;
+}
+
+.breath-block{
+    animation: breath 3s infinite;
+    width: 100px;
+    height: 50px;
+    background: var(--blue);
+}
+@keyframes breath {
+    0% {
+        width: 115px;
+        animation-timing-function: ease-out;
+    }
+    25% {
+        width: 130px;
+        animation-timing-function: linear;
+    }
+    50% {
+        width: 125px;
+        animation-timing-function: linear;
+    }
+    100% {
+        width: 100px;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+#moveBlock{
+    background: var(--blue);
+    width: 100px;
+    height: 100px;
+}
